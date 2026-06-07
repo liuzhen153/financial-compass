@@ -26,6 +26,20 @@ Financial Compass 是一个**个人长期投资研究引擎**，不是荐股工�
 
 每次完整分析输出一份带 YAML 元信息的 `.md` 文件，格式规范、可回溯、可迭代。
 
+## 前置依赖
+
+| 依赖 | 说明 |
+|------|------|
+| [AnySearch MCP](https://api.anysearch.com/mcp) | 行业全景搜索（必需，否则财务数据覆盖率显著下降） |
+| Claude Code | 运行环境 |
+
+## 安装
+
+```bash
+# 克隆到 Claude Code 技能目录
+git clone https://github.com/liuzhen153/financial-compass.git ~/.claude/skills/financial-compass
+```
+
 ## 免责声明
 
 本工具是研究辅助工具，不构成投资建议。投资有风险，入市需谨慎。

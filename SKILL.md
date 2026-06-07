@@ -15,6 +15,19 @@
 
 ---
 
+## 前置依赖
+
+本 Skill 依赖以下外部服务，使用前请确保已配置：
+
+| 依赖 | 用途 | 配置方式 |
+|------|------|---------|
+| **AnySearch MCP** | 行业全景搜索、公司叙事、产业链数据 | 在 Claude Code 中配置 MCP 服务器 `api.anysearch.com/mcp` |
+| **WebSearch** | A股结构化财务数据（市值/PE/营收等） | Claude Code 内置，无需额外配置 |
+
+> 未配置 AnySearch MCP 时，Skill 仍可运行但财务数据覆盖率会显著下降（参见第零部分实测数据）。
+
+---
+
 ## 核心输出规则：始终产出 .md 文档（最高优先级）
 
 **每一次完整分析必须落地为一个 `.md` 文件。** 这是本 Skill 最核心的纪律约束——不产生文件的分析等于没有发生过。
@@ -841,9 +854,12 @@ WebSearch（结构化财务 · ~40%）
 ## 参考资料
 
 本Skill基于以下开源项目的整合提炼：
-- `references/01-comparison-report.md` — 8个仓库综合对比分析
-- `references/serenity-framework.md` — Serenity方法论精华（来自ZadAnthony/methodology.md）
-- `references/bayesian-valuation.md` — 贝叶斯估值框架（来自haskaomni）
+- Serenity 产业链瓶颈理论（ZadAnthony/serenity-skill）
+- Bayesian Intrinsic Growth Valuation（haskaomni）
+- A股市场信号分析（fadewalk/serenity-stock-choke）
+- 基金持仓穿透方法论
+
+详见 `references/` 目录下的补充指南。
 
 ---
 
@@ -852,6 +868,3 @@ WebSearch（结构化财务 · ~40%）
 本Skill是研究辅助工具，不构成投资建议。所有分析输出均为框架性判断，最终决策权在用户手中。投资有风险，入市需谨慎。
 
 *Built by synthesizing the best of 8 open-source financial analysis skills. MIT License.*
-
-
-ARGUMENTS: 分析具身机器人行业，文件名记得加上报告产出时的十分秒
